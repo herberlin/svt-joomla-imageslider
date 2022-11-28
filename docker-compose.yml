@@ -1,0 +1,26 @@
+version: '3.1'
+
+services:
+  joomla:
+    image: joomla:3.10.11
+    restart: 'no'
+    container_name: jooma
+    links:
+      - joomladb:mysql
+    volumes:
+      - ./mod_svtslider:/var/www/html/modules/mod_svtslider
+      - ./a4joomla-lakeside3r-free:/var/www/html/templates/a4joomla-lakeside3r-free
+    ports:
+      - 8080:80
+    environment:
+      JOOMLA_DB_HOST: joomladb
+      JOOMLA_DB_PASSWORD: example
+
+  joomladb:
+    image: mysql:5.6
+    container_name: joomladb
+    restart: 'no'
+    ports: 
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: example
