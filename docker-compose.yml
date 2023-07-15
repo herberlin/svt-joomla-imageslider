@@ -2,9 +2,9 @@ version: '3.1'
 
 services:
   joomla:
-    image: joomla:3.10.11
+    image: joomla:4.3.3-php8.1-apache
     restart: 'no'
-    container_name: jooma
+    container_name: joomla
     links:
       - joomladb:mysql
     volumes:
@@ -22,5 +22,7 @@ services:
     restart: 'no'
     ports: 
       - 3306:3306
+    volumes:
+      - ./docker/mysql/dump:/docker-entrypoint-initdb.d
     environment:
       MYSQL_ROOT_PASSWORD: example

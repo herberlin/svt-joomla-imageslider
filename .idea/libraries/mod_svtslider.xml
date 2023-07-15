@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="mod_svtslider">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/mod_svtslider.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
